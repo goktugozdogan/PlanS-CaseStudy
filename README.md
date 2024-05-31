@@ -4,7 +4,7 @@
 
 docker-compose up -d
 
-## Import postman collectşon to consume endpoints
+## Import postman collection to consume endpoints
 
 ## Other Links
 

@@ -12,7 +12,7 @@ import java.time.Instant;
 @Component
 public class TimingAspect {
 
-    @Around("execution(* com.example.plans.*.controllers..*(..))")
+    @Around("execution(* com.example.plans..controllers..*(..))")
     public Object timing(ProceedingJoinPoint joinPoint) throws Throwable {
         long startTime = Instant.now().toEpochMilli();
         Object result = joinPoint.proceed();

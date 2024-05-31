@@ -34,12 +34,3 @@ corenetwork:
     url: http://localhost:8086/devicehub
   iotdatahub:
     url: http://localhost:8088/iotdatahub
-
-eureka:
-  client:
-    service-url:
-      defaultZone: http://eureka-server:8761/eureka/
-  instance:
-    hostname: USERHUB
-#server.servlet.context-path=/api_devicehub/v1
-

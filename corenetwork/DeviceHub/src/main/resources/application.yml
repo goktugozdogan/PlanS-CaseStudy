@@ -28,9 +28,3 @@ spring:
       devicehub:
         update: device-update-topic
         opt: devicehub-operations-topic
-eureka:
-  client:
-    service-url:
-      defaultZone: http://eureka-server:8761/eureka/
-  instance:
-    hostname: DEVICEHUB

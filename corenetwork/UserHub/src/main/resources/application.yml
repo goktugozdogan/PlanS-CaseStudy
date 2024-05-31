@@ -1,0 +1,45 @@
+server:
+  port: 8087
+
+spring:
+  application:
+    name: USERHUB
+  data:
+    mongodb:
+      host: mongodb://mongodb
+      port: 27017
+      database: UserDB
+      uri: mongodb://mongodb:27017/UserDB
+  kafka:
+    consumer:
+      bootstrap-servers: broker1:9091,broker2:9092,broker3:9093
+      group-id: corenetwork-group
+      auto-offset-reset: earliest
+      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      value-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+    producer:
+      group-id: corenetwork-group
+      key-serializer: org.apache.kafka.common.serialization.StringSerializer
+      value-serializer: org.apache.kafka.common.serialization.StringSerializer
+    topics:
+      groundstation:
+        iotdata: iotdata-topic
+        operations: operations-topic
+      devicehub:
+        update: device-update-topic
+        opt: devicehub-operations-topic
+
+corenetwork:
+  devicehub:
+    url: http://localhost:8086/devicehub
+  iotdatahub:
+    url: http://localhost:8088/iotdatahub
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://eureka-server:8761/eureka/
+  instance:
+    hostname: USERHUB
+#server.servlet.context-path=/api_devicehub/v1
+

@@ -1,4 +1,4 @@
-package com.example.plans.iotdatahub.controller;
+package com.example.plans.iotdatahub.controllers;
 
 import com.example.plans.iotdatahub.exceptions.IoTDataNotFoundException;
 import com.example.plans.iotdatahub.services.IoTDataService;

@@ -1,0 +1,134 @@
+{
+	"info": {
+		"_postman_id": "132e0264-8634-4716-a8ed-cfadfb6fc934",
+		"name": "DeviceHub",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "10100355"
+	},
+	"item": [
+		{
+			"name": "/devicehub/create",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"traceid\": \"9d4c8e0a-3b2f\",\n    \"iot_devices\": [\n        {\n            \"eui\": \"12\",\n            \"ownership\": [\n                \"ASDQWE\",\n                \"qQEWE\"\n            ],\n            \"location\": {\n                \"latitude\": 51.5074,\n                \"longitude\": -0.1278\n            },\n            \"operational_dates\": {\n                \"start\": \"2024-03-01\",\n                \"end\": \"2027-01-01\"\n            },\n            \"sensors\": [\n                {\n                    \"type\": \"temperature\",\n                    \"status\": \"on\",\n                    \"range\": {\n                        \"min\": 0,\n                        \"max\": 50,\n                        \"unit\": \"cm\"\n                    }\n                },\n                {\n                    \"type\": \"humidity\",\n                    \"status\": \"on\",\n                    \"range\": {\n                        \"min\": 0,\n                        \"max\": 150,\n                        \"unit\": \"cm\"\n                    }\n                },\n                {\n                    \"type\": \"pressure\",\n                    \"status\": \"on\",\n                    \"range\": {\n                        \"min\": 0,\n                        \"max\": 250,\n                        \"unit\": \"cm\"\n                    }\n                }\n            ],\n            \"metadata\": {\n                \"manufacturer\": \"PlanS\",\n                \"model\": \"IotDev-4\",\n                \"serial_number\": \"SN123456789\",\n                \"manufacture_date\": \"2024-01-01\"\n            },\n            \"security\": {\n                \"encryption\": true,\n                \"authentication\": true,\n                \"secure_boot\": true,\n                \"ota_updates\": true\n            },\n            \"connectivity\": {\n                \"supported_connectivity\": [\n                    \"Sattalite\",\n                    \"Wi-Fi\"\n                ],\n                \"enabled_connectivity\": [\n                    \"Sattalite\"\n                ]\n            },\n            \"power_source\": {\n                \"type\": \"battery\",\n                \"capacity\": {\n                    \"value\": 3000,\n                    \"unit\": \"mAh\"\n                },\n                \"voltage\": {\n                    \"value\": 3.7,\n                    \"unit\": \"V\"\n                },\n                \"expected_lifetime\": \"2027-01-01\"\n            },\n            \"firmware_version\": \"v1.0\"\n        }\n    ]\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8086/devicehub/create",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8086",
+					"path": [
+						"devicehub",
+						"create"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/devicehub/find",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"devEUI\": [\n        \"0000000000000001\",\n        \"0000000000000002\",\n        \"0000000000000003\"\n    ],\n    \"traceid\": \"4e6a9b3c-5d8f\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8086/devicehub/find",
+					"host": [
+						"localhost"
+					],
+					"port": "8086",
+					"path": [
+						"devicehub",
+						"find"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/devicehub/update",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"traceid\": \"f0e1a2b3-8c7d\",\n    \"iot_devices\": [\n        {\n            \"eui\": \"0000000000000002\",\n            \"ownership\": [\n                \"NEW_OWNER@mail.com\"\n            ],\n            \"location\": {\n                \"latitude\": 11.5024,\n                \"longitude\": -10.1278\n            },\n            \"firmware_version\": \"v2.0\"\n        }\n    ]\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8086/devicehub/update",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8086",
+					"path": [
+						"devicehub",
+						"update"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/devicehub/delete",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"traceid\": \"0c3d5a2b-1f9e\",\n    \"devEUI\": [\n        \"0000000000000001\"\n    ]\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8086/devicehub/delete",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8086",
+					"path": [
+						"devicehub",
+						"delete"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

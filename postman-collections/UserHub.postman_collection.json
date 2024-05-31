@@ -1,0 +1,362 @@
+{
+	"info": {
+		"_postman_id": "983d7bf1-4ec0-4283-9924-22cde18794f0",
+		"name": "UserHub",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "10100355"
+	},
+	"item": [
+		{
+			"name": "/auth/signup",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"username\": \"samaltny\",\n    \"firstname\": \"Sam\",\n    \"lastname\": \"Altny\",\n    \"email\": \"samaltny@mail.com\",\n    \"phone\": \"05123456789\",\n    \"password\": \"pass1234\",\n    \"roles\": [\n        {\n            \"name\": \"CLIENT\"\n        }\n    ],\n    \"devices\": []\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8087/auth/signup",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8087",
+					"path": [
+						"auth",
+						"signup"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/auth/signin",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"email\": \"samaltny@example.com\",\n    \"password\": \"pass1234\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8087/auth/signin",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8087",
+					"path": [
+						"auth",
+						"signin"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/userhub/find_by_email",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"traceid\": \"8ec0b7f2-59d1\",\n    \"email\": \"samaltny@mail.com\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8087/userhub/find_by_email",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8087",
+					"path": [
+						"userhub",
+						"find_by_email"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/userhub/delete_by_email",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"traceid\": \"8ec0b7f2-59d1\",\n    \"email\": \"samaltny@mail.com\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8087/userhub/delete_by_email",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8087",
+					"path": [
+						"userhub",
+						"delete_by_email"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/userhub/update_by_email",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"username\": \"RRRR\",\n    \"firstname\": \"R\",\n    \"lastname\": \"R\",\n    \"email\": \"samaltny@mail.com\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8087/userhub/update_by_email",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8087",
+					"path": [
+						"userhub",
+						"update_by_email"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/userhub/link_device",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"traceid\": \"8ec0b7f2-59d1\",\n    \"eui\": \"0000000000000002\",\n    \"email\": \"qwe@mail.com\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8087/userhub/link_device",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8087",
+					"path": [
+						"userhub",
+						"link_device"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/userhub/unlink_device",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"traceid\": \"8ec0b7f2-59d1\",\n    \"eui\": \"0000000000000002\",\n    \"email\": \"qwe@mail.com\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8087/userhub/unlink_device",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8087",
+					"path": [
+						"userhub",
+						"unlink_device"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/userhub/list_devices",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"traceid\": \"8ec0b7f2-59d1\",\n    \"email\": \"qwe@mail.com\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8087/userhub/list_devices",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8087",
+					"path": [
+						"userhub",
+						"list_devices"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/userhub/list_device_data",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"traceid\": \"8ec0b7f2-59d1\",\n    \"devEUI\": [\n        \"0000000000000001\"\n    ]\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8087/userhub/list_device_data",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8087",
+					"path": [
+						"userhub",
+						"list_device_data"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/userhub/list_all_iotdata_by_email",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"traceid\": \"asd123asd123asd123\",\n    \"email\": \"zxc@mail.com\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8087/userhub/list_all_iotdata_by_email",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8087",
+					"path": [
+						"userhub",
+						"list_all_iotdata_by_email"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/userhub/toggle_sensor",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"devEUI\": \"0000000000000002\",\n    \"email\": \"asd@mail.com\",\n    \"sensors\": [\n        {\n            \"type\": \"temperature\",\n            \"range\": {\n                \"min\": 0.0,\n                \"max\": 50.0,\n                \"unit\": \"cm\"\n            },\n            \"status\": \"ON\"\n        },\n        {\n            \"type\": \"humidity\",\n            \"range\": {\n                \"min\": 0.0,\n                \"max\": 150.0,\n                \"unit\": \"cm\"\n            },\n            \"status\": \"OFF\"\n        },\n        {\n            \"type\": \"pressure\",\n            \"range\": {\n                \"min\": 0.0,\n                \"max\": 250.0,\n                \"unit\": \"cm\"\n            },\n            \"status\": \"OFF\"\n        }\n    ]\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8087/userhub/toggle_sensor",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8087",
+					"path": [
+						"userhub",
+						"toggle_sensor"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

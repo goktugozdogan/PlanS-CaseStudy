@@ -1,0 +1,155 @@
+{
+	"info": {
+		"_postman_id": "ebc74f6e-bd59-430e-b433-07665ef8ba58",
+		"name": "IotDataHub",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "10100355"
+	},
+	"item": [
+		{
+			"name": "/iotdatahub/find_by_id",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"traceid\": \"1d2b4e8f-3c0a\",\n    \"id\": [\n        \"abcde000001\"\n    ]\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8088/iotdatahub/find_by_id",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8088",
+					"path": [
+						"iotdatahub",
+						"find_by_id"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/iotdatahub/find_by_eui",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"devEUI\": [\n        \"000000000000000B\"\n    ],\n    \"traceid\": \"1d2b4e8f-3c0a\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8088/iotdatahub/find_by_eui",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8088",
+					"path": [
+						"iotdatahub",
+						"find_by_eui"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/iotdatahub/create",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"traceid\": \"7a8e2d1c-f30b\",\n    \"ioTData\": [\n        {\n            \"id\": \"1789\",\n            \"eui\": \"IOT-789\",\n            \"timestamp\": \"2024-05-26T18:45:00Z\",\n            \"connection\": \"Sattalite\",\n            \"last_connection_time\": \"2024-04-26T18:45:00Z\",\n            \"connection_strength\": \"excellent\",\n            \"status\": \"normal\",\n            \"sensors\": [\n                {\n                    \"value\": 22.4,\n                    \"type\": \"temperature\",\n                    \"status\": \"on\",\n                    \"range\": {\n                        \"min\": 0,\n                        \"max\": 50,\n                        \"unit\": \"cm\"\n                    }\n                },\n                {\n                    \"value\": 64.7,\n                    \"type\": \"humidity\",\n                    \"status\": \"on\",\n                    \"range\": {\n                        \"min\": 0,\n                        \"max\": 150,\n                        \"unit\": \"cm\"\n                    }\n                },\n                {\n                    \"value\": 1234.75,\n                    \"type\": \"pressure\",\n                    \"status\": \"on\",\n                    \"range\": {\n                        \"min\": 0,\n                        \"max\": 250,\n                        \"unit\": \"cm\"\n                    }\n                }\n            ],\n            \"location\": {\n                \"latitude\": 51.5074,\n                \"longitude\": -0.1278\n            },\n            \"metadata\": {\n                \"manufacturer\": \"PlanS\",\n                \"model\": \"IotDev-4\",\n                \"serial_number\": \"SN123456789\",\n                \"manufacture_date\": \"2024-01-01\"\n            },\n            \"security\": {\n                \"encryption\": true,\n                \"authentication\": true,\n                \"secure_boot\": true,\n                \"ota_updates\": true\n            },\n            \"user_details\": {\n                \"username\": \"user123\",\n                \"email\": \"user123@mail.com\"\n            },\n            \"power_source\": {\n                \"battery_level\": 65,\n                \"type\": \"battery\",\n                \"capacity\": {\n                    \"value\": 3000,\n                    \"unit\": \"mAh\"\n                },\n                \"voltage\": {\n                    \"value\": 3.7,\n                    \"unit\": \"V\"\n                },\n                \"expected_lifetime\": \"2027-01-01\"\n            },\n            \"firmware_version\": \"v1.0\"\n        },\n        {\n            \"id\": \"2789\",\n            \"eui\": \"IOT-789\",\n            \"timestamp\": \"2024-05-26T18:45:00Z\",\n            \"connection\": \"Sattalite\",\n            \"last_connection_time\": \"2024-04-26T18:45:00Z\",\n            \"connection_strength\": \"excellent\",\n            \"status\": \"normal\",\n            \"sensors\": [\n                {\n                    \"value\": 22.4,\n                    \"type\": \"temperature\",\n                    \"status\": \"on\",\n                    \"range\": {\n                        \"min\": 0,\n                        \"max\": 50,\n                        \"unit\": \"cm\"\n                    }\n                },\n                {\n                    \"value\": 64.7,\n                    \"type\": \"humidity\",\n                    \"status\": \"on\",\n                    \"range\": {\n                        \"min\": 0,\n                        \"max\": 150,\n                        \"unit\": \"cm\"\n                    }\n                },\n                {\n                    \"value\": 1234.75,\n                    \"type\": \"pressure\",\n                    \"status\": \"on\",\n                    \"range\": {\n                        \"min\": 0,\n                        \"max\": 250,\n                        \"unit\": \"cm\"\n                    }\n                }\n            ],\n            \"location\": {\n                \"latitude\": 51.5074,\n                \"longitude\": -0.1278\n            },\n            \"metadata\": {\n                \"manufacturer\": \"PlanS\",\n                \"model\": \"IotDev-4\",\n                \"serial_number\": \"SN123456789\",\n                \"manufacture_date\": \"2024-01-01\"\n            },\n            \"security\": {\n                \"encryption\": true,\n                \"authentication\": true,\n                \"secure_boot\": true,\n                \"ota_updates\": true\n            },\n            \"user_details\": {\n                \"username\": \"user123\",\n                \"email\": \"user123@mail.com\"\n            },\n            \"power_source\": {\n                \"battery_level\": 65,\n                \"type\": \"battery\",\n                \"capacity\": {\n                    \"value\": 3000,\n                    \"unit\": \"mAh\"\n                },\n                \"voltage\": {\n                    \"value\": 3.7,\n                    \"unit\": \"V\"\n                },\n                \"expected_lifetime\": \"2027-01-01\"\n            },\n            \"firmware_version\": \"v1.0\"\n        }\n    ]\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8088/iotdatahub/create",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8088",
+					"path": [
+						"iotdatahub",
+						"create"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/iotdatahub/update",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"traceid\": \"5b4c9f1e-6a2d\",\n    \"ioTData\": [\n        {\n            \"id\": \"1789\",\n            \"eui\": \"IOT-789\",\n            \"timestamp\": \"2024-05-26T18:45:00Z\",\n            \"connection\": \"Sattalite\",\n            \"last_connection_time\": \"2024-04-26T18:45:00Z\",\n            \"connection_strength\": \"excellent\",\n            \"status\": \"normal\",\n            \"sensors\": [\n                {\n                    \"value\": 22.4,\n                    \"type\": \"temperature\",\n                    \"status\": \"on\",\n                    \"range\": {\n                        \"min\": 0,\n                        \"max\": 50,\n                        \"unit\": \"cm\"\n                    }\n                },\n                {\n                    \"value\": 64.7,\n                    \"type\": \"humidity\",\n                    \"status\": \"on\",\n                    \"range\": {\n                        \"min\": 0,\n                        \"max\": 150,\n                        \"unit\": \"cm\"\n                    }\n                },\n                {\n                    \"value\": 1234.75,\n                    \"type\": \"pressure\",\n                    \"status\": \"on\",\n                    \"range\": {\n                        \"min\": 0,\n                        \"max\": 250,\n                        \"unit\": \"cm\"\n                    }\n                }\n            ],\n            \"location\": {\n                \"latitude\": 51.5074,\n                \"longitude\": -0.1278\n            },\n            \"metadata\": {\n                \"manufacturer\": \"PlanS\",\n                \"model\": \"IotDev-4\",\n                \"serial_number\": \"SN123456789\",\n                \"manufacture_date\": \"2024-01-01\"\n            },\n            \"security\": {\n                \"encryption\": true,\n                \"authentication\": true,\n                \"secure_boot\": true,\n                \"ota_updates\": true\n            },\n            \"user_details\": {\n                \"username\": \"user123\",\n                \"email\": \"user123@mail.com\"\n            },\n            \"power_source\": {\n                \"battery_level\": 65,\n                \"type\": \"battery\",\n                \"capacity\": {\n                    \"value\": 3000,\n                    \"unit\": \"mAh\"\n                },\n                \"voltage\": {\n                    \"value\": 3.7,\n                    \"unit\": \"V\"\n                },\n                \"expected_lifetime\": \"2027-01-01\"\n            },\n            \"firmware_version\": \"v1.0\"\n        },\n        {\n            \"id\": \"2789\",\n            \"eui\": \"IOT-789\",\n            \"timestamp\": \"2024-05-26T18:45:00Z\",\n            \"connection\": \"Sattalite\",\n            \"last_connection_time\": \"2024-04-26T18:45:00Z\",\n            \"connection_strength\": \"excellent\",\n            \"status\": \"normal\",\n            \"sensors\": [\n                {\n                    \"value\": 22.4,\n                    \"type\": \"temperature\",\n                    \"status\": \"on\",\n                    \"range\": {\n                        \"min\": 0,\n                        \"max\": 50,\n                        \"unit\": \"cm\"\n                    }\n                },\n                {\n                    \"value\": 64.7,\n                    \"type\": \"humidity\",\n                    \"status\": \"on\",\n                    \"range\": {\n                        \"min\": 0,\n                        \"max\": 150,\n                        \"unit\": \"cm\"\n                    }\n                },\n                {\n                    \"value\": 1234.75,\n                    \"type\": \"pressure\",\n                    \"status\": \"on\",\n                    \"range\": {\n                        \"min\": 0,\n                        \"max\": 250,\n                        \"unit\": \"cm\"\n                    }\n                }\n            ],\n            \"location\": {\n                \"latitude\": 51.5074,\n                \"longitude\": -0.1278\n            },\n            \"metadata\": {\n                \"manufacturer\": \"PlanS\",\n                \"model\": \"IotDev-4\",\n                \"serial_number\": \"SN123456789\",\n                \"manufacture_date\": \"2024-01-01\"\n            },\n            \"security\": {\n                \"encryption\": true,\n                \"authentication\": true,\n                \"secure_boot\": true,\n                \"ota_updates\": true\n            },\n            \"user_details\": {\n                \"username\": \"user123\",\n                \"email\": \"user123@mail.com\"\n            },\n            \"power_source\": {\n                \"battery_level\": 65,\n                \"type\": \"battery\",\n                \"capacity\": {\n                    \"value\": 3000,\n                    \"unit\": \"mAh\"\n                },\n                \"voltage\": {\n                    \"value\": 3.7,\n                    \"unit\": \"V\"\n                },\n                \"expected_lifetime\": \"2027-01-01\"\n            },\n            \"firmware_version\": \"v1.0\"\n        }\n    ]\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8088/iotdatahub/update",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8088",
+					"path": [
+						"iotdatahub",
+						"update"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/iotdatahub/delete",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"traceid\": \"c54b6e9a-0d81\",\n    \"id\": [\n        \"1789\"\n    ]\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8088/iotdatahub/delete",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8088",
+					"path": [
+						"iotdatahub",
+						"delete"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

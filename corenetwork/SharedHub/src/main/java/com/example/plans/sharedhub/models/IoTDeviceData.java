@@ -17,17 +17,14 @@ public class IoTDeviceData {
     @Id
     private String id;
 
-    @JsonProperty("eui")
-    private String devEUI;
+    private String eui;
 
     private String timestamp;
 
     private String connection;
 
-    @JsonProperty("last_connection_time")
-    private String lastConnectionTime;
+    private String last_connection_time;
 
-    @JsonProperty("connection_strength")
     private String connectionStrength;
 
     private List<SensorResult> sensors;
@@ -38,16 +35,13 @@ public class IoTDeviceData {
 
     private Security security;
 
-    @JsonProperty("user_details")
-    private UserDetails userDetails;
+    private UserDetails user_details;
 
     private String status;
 
-    @JsonProperty("power_source")
-    private PowerSourceResult powerSource;
+    private PowerSourceResult power_source;
 
-    @JsonProperty("firmware_version")
-    private String firmwareVersion;
+    private String firmware_version;
 }
 
 @Data

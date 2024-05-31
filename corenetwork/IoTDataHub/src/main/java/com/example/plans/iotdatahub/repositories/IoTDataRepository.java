@@ -8,5 +8,5 @@ import java.util.List;
 
 @Repository
 public interface IoTDataRepository extends MongoRepository<IoTDeviceData, String> {
-    List<IoTDeviceData> findByDevEUI(String deviceId);
+    List<IoTDeviceData> findByEui(String deviceId);
 }

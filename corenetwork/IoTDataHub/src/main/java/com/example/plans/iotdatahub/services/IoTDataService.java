@@ -26,7 +26,7 @@ public class IoTDataService {
     }
 
     public List<IoTDeviceData> findByDevEUI(String devEUI) throws IoTDataNotFoundException {
-        List<IoTDeviceData> iotData = iotDataRepository.findByDevEUI(devEUI);
+        List<IoTDeviceData> iotData = iotDataRepository.findByEui(devEUI);
         if (iotData.isEmpty()) {
             throw new IoTDataNotFoundException("IotDevice Data with id: " + devEUI + " not found.");
         }
@@ -35,7 +35,7 @@ public class IoTDataService {
     }
 
     public IoTDeviceData save(IoTDeviceData ioTDeviceData) throws IoTDataNotFoundException {
-        if (ioTDeviceData.getDevEUI() != null && iotDataRepository.existsById(ioTDeviceData.getId())) {
+        if (ioTDeviceData.getEui() != null && iotDataRepository.existsById(ioTDeviceData.getId())) {
             throw new IoTDataNotFoundException("IotDevice Data with id: " + ioTDeviceData.getId() + " already exists.");
         }
 

@@ -56,7 +56,7 @@ public class DeviceHubController {
         return res;
     }
 
-    @PutMapping("/update")
+    @PostMapping("/update")
     public BaseResponse updateDevice(@RequestBody DeviceRequest req) throws DeviceNotFoundException {
         log.info("Update device req: {}", req);
 

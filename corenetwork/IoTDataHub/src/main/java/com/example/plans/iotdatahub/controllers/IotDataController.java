@@ -73,7 +73,7 @@ public class IotDataController {
         log.info("Update device req: {}", req);
 
         for (IoTDeviceData ioTDeviceData : req.getIoTDeviceData()) {
-            iotDataService.update(ioTDeviceData.getEui(), ioTDeviceData);
+            iotDataService.update(ioTDeviceData.getId(), ioTDeviceData);
         }
 
         StringResponse res = new StringResponse(req.getTraceid(), "Update operation successful.");

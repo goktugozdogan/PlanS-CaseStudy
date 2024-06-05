@@ -34,6 +34,15 @@ public class IoTDataService {
         return iotData;
     }
 
+    public List<IoTDeviceData> findByEmail(String email) throws IoTDataNotFoundException {
+        List<IoTDeviceData> iotData = iotDataRepository.findByEmail(email);
+        if (iotData.isEmpty()) {
+            throw new IoTDataNotFoundException("IotDevice Data contains email: " + email + " not found.");
+        }
+
+        return iotData;
+    }
+
     public IoTDeviceData save(IoTDeviceData ioTDeviceData) throws IoTDataNotFoundException {
         if (ioTDeviceData.getEui() != null && iotDataRepository.existsById(ioTDeviceData.getId())) {
             throw new IoTDataNotFoundException("IotDevice Data with id: " + ioTDeviceData.getId() + " already exists.");

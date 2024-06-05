@@ -57,6 +57,21 @@ public class IotDataController {
         return res;
     }
 
+    @PostMapping("/find_by_email")
+    public BaseResponse findByEmail(@RequestBody IoTDataRequest req) throws IoTDataNotFoundException {
+        log.info("Find device data by email req: {}", req);
+
+        List<IoTDeviceData> iotData = new ArrayList<>();
+        for (String email : req.getEmails()) {
+            List<IoTDeviceData> ioTDeviceData = iotDataService.findByEmail(email);
+            iotData.addAll(ioTDeviceData);
+        }
+
+        IoTDataResponse res = new IoTDataResponse(req.getTraceid(), iotData);
+        log.info("Find device data by email res: {}", res);
+        return res;
+    }
+
     @PostMapping("/create")
     public BaseResponse createDevice(@RequestBody IoTDataRequest req) throws IoTDataNotFoundException {
         log.info("Create device req: {}", req);

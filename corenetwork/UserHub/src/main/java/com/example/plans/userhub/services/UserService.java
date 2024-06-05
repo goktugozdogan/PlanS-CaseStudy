@@ -204,9 +204,17 @@ public class UserService {
         return res;
     }
 
-    // todo
     public BaseResponse listAllDataByEmail(IoTDataRequest req) {
-        return null;
+        // devices db
+        IoTDataResponse res = restTemplate.postForObject(URL_DATAHUB + "/find_by_email", req, IoTDataResponse.class);
+
+        if (res == null){
+            return new StringResponse(req.getTraceid(), "Failed to retrieve device data.");
+        } else if (res.getCode() != 200) {
+            return res;
+        }
+
+        return res;
     }
 
     public BaseResponse toggleSensor(OperationRequest req) {

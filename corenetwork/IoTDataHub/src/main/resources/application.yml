@@ -1,29 +1,5 @@
-server:
-  port: 8088
 spring:
   application:
-    name: IOTDATAHUB
-  data:
-    mongodb:
-      host: mongodb://mongodb
-      port: 27017
-      database: IoTDataDB
-      uri: mongodb://mongodb:27017/IoTDataDB
-  kafka:
-    consumer:
-      bootstrap-servers: broker1:9091,broker2:9092,broker3:9093
-      group-id: corenetwork-group
-      auto-offset-reset: earliest
-      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
-      value-deserializer: org.apache.kafka.common.serialization.StringDeserializer
-    producer:
-      group-id: corenetwork-group
-      key-serializer: org.apache.kafka.common.serialization.StringSerializer
-      value-serializer: org.apache.kafka.common.serialization.StringSerializer
-    topics:
-      groundstation:
-        iotdata: iotdata-topic
-        operations: operations-topic
-      devicehub:
-        update: device-update-topic
-        opt: userhub-devicehub-topic
+    name: iotdatahub
+  config:
+    import: configserver:http://configserver:8888

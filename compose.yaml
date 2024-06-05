@@ -99,6 +99,26 @@ services:
     networks:
       - backend
 
+  eureka-server:
+    build:
+      context: ./corenetwork/CoreNetworkRegistry
+    container_name: eureka-server
+    restart: unless-stopped
+    ports:
+      - '8761:8761'
+    networks:
+      - backend
+
+  configserver:
+    build:
+      context: ./corenetwork/CoreNetworkConfigServer
+    container_name: configserver
+    restart: unless-stopped
+    ports:
+      - '8888:8888'
+    networks:
+      - backend
+
   devicehub:
     build:
       context: ./corenetwork/
@@ -108,6 +128,7 @@ services:
     ports:
       - '8086:8086'
     depends_on:
+      - configserver
       - mongodb
       - broker1
     networks:
@@ -124,6 +145,7 @@ services:
     ports:
       - '8087:8087'
     depends_on:
+      - configserver
       - mongodb
       - broker1
     networks:
@@ -142,6 +164,7 @@ services:
     ports:
       - '8088:8088'
     depends_on:
+      - configserver
       - mongodb
       - broker1
     networks:
